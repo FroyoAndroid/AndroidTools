@@ -8,7 +8,23 @@ import android.content.DialogInterface;
 import com.letfriendsin.app.R;
 
 public class DialogsModule {
+
     public static ProgressDialog waitingDialog;
+    private static DialogsModule _instance;
+
+    /**
+     * Singleton pattern for static methods and variables
+     * You must run the singletons which you will use in the first Activity
+     */
+    public static void initInstance(){
+        if (_instance == null){
+            _instance = new DialogsModule();
+        }
+    }
+
+    public static DialogsModule getInstance() {
+        return _instance;
+    }
 
     /**
      * Shows a dialog with a custom msg, two buttons (OK and Cancel) and the logo of the app
