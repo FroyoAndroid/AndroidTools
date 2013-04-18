@@ -13,9 +13,16 @@ import android.provider.ContactsContract;
  */
 public class ContactModule {
 
+    /* We use this variable as an identifier in order to use the results to the current
+     * activity which we use the Contact picker
+     */
     private static final int CONTACT_PICKER_RESULT = 1001;
     private static ContactModule _instance;
 
+    /**
+     * Singleton pattern for static methods and variables
+     * You must run the singletons which you will use in the first Activity
+     */
     public static void initInstance(){
         if (_instance == null){
             _instance = new ContactModule();
@@ -26,7 +33,11 @@ public class ContactModule {
         return _instance;
     }
 
-    public void doLaunchContactPicker(Activity act) {
+    /**
+     * Shows a contact picker to choose a contact from our index.
+     * @param act is the current activity eg. SoiActivity.this
+     */
+    public void showContactPicker(Activity act) {
         Intent contactPickerIntent = new Intent(Intent.ACTION_PICK,ContactsContract.Contacts.CONTENT_URI);
         act.startActivityForResult(contactPickerIntent, CONTACT_PICKER_RESULT);
     }
