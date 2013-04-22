@@ -15,9 +15,9 @@ import android.os.Environment;
  * Author: spirosoikonomakis
  * To change this template use File | Settings | File Templates.
  */
-public class UtilityModule {
+public class UtilityHelper {
 
-    private static UtilityModule _instance;
+    private static UtilityHelper _instance;
 
     /**
      * Singleton pattern for static methods and variables
@@ -25,11 +25,11 @@ public class UtilityModule {
      */
     public static void initInstance(){
         if (_instance == null){
-            _instance = new UtilityModule();
+            _instance = new UtilityHelper();
         }
     }
 
-    public static UtilityModule getInstance() {
+    public static UtilityHelper getInstance() {
         return _instance;
     }
     /**
@@ -116,7 +116,7 @@ public class UtilityModule {
 
             }
         } else {
-            //DialogsModule.simpleNoInternet(ctx);
+            //DialogsHelper.simpleNoInternet(ctx);
         }
     }
 }
