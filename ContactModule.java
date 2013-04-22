@@ -41,4 +41,12 @@ public class ContactModule {
         Intent contactPickerIntent = new Intent(Intent.ACTION_PICK,ContactsContract.Contacts.CONTENT_URI);
         act.startActivityForResult(contactPickerIntent, CONTACT_PICKER_RESULT);
     }
+
+    /**
+     *
+     * @return The contact picker identifier
+     */
+    public int getContactPickerResult() {
+        return CONTACT_PICKER_RESULT;
+    }
 }

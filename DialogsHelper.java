@@ -7,10 +7,10 @@ import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import com.letfriendsin.app.R;
 
-public class DialogsModule {
+public class DialogsHelper {
 
     public static ProgressDialog waitingDialog;
-    private static DialogsModule _instance;
+    private static DialogsHelper _instance;
 
     /**
      * Singleton pattern for static methods and variables
@@ -18,11 +18,11 @@ public class DialogsModule {
      */
     public static void initInstance(){
         if (_instance == null){
-            _instance = new DialogsModule();
+            _instance = new DialogsHelper();
         }
     }
 
-    public static DialogsModule getInstance() {
+    public static DialogsHelper getInstance() {
         return _instance;
     }
 
