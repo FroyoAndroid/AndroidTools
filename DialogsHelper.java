@@ -33,7 +33,7 @@ public class DialogsHelper {
      * @param act is the current activity eg. SoiActivity.this
      * @param msg is the msg which we want to show in our dialog
      */
-    public static void showDialog(final Activity act, final String msg) {
+    public void showDialog(final Activity act, final String msg) {
         try {
             Builder builder = new Builder(act);
             builder.setMessage(msg)
@@ -64,7 +64,7 @@ public class DialogsHelper {
      * WARNING!!! Must show the dialog in Android's runOnUiThread method of the current activity
      * @param act is the current activity eg. SoiActivity.this
      */
-    public static void simpleNoInternet(final Activity act) {
+    public void simpleNoInternet(final Activity act) {
         try {
             Builder builder = new Builder(act);
             builder.setMessage(act.getResources().getString(R.string.nointernetaccess))
@@ -96,7 +96,7 @@ public class DialogsHelper {
      * @param act is the current activity eg. SoiActivity.this
      * @param message
      */
-    public static void showWaitingDialog(Activity act, String message) {
+    public void showWaitingDialog(Activity act, String message) {
         if (waitingDialog != null) {
             if (waitingDialog.isShowing())
                 return;

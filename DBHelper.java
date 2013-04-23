@@ -18,7 +18,7 @@ import java.util.ArrayList;
 public class DBHelper extends SQLiteOpenHelper {
 
     private static String DB_PATH = "";
-    private static final String DB_NAME = "db.sqlite";
+    private static final String DB_NAME = "letfriends.sqlite";
     private SQLiteDatabase myDataBase;
     private final Context myContext;
 
@@ -93,7 +93,7 @@ public class DBHelper extends SQLiteOpenHelper {
      * handled. This is done by transfering bytestream.
      * */
     private void copyDataBase() throws IOException {
-        InputStream myInput = myContext.getAssets().open("db.db");
+        InputStream myInput = myContext.getAssets().open("letfriends.db");
         String outFileName = DB_PATH + DB_NAME;
         OutputStream myOutput = new FileOutputStream(outFileName);
         byte[] buffer = new byte[1024];
