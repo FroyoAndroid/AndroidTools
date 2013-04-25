@@ -70,6 +70,7 @@ public class LoggerWrapper {
      * Logs with [ERROR][tag] msg exception
      * @param tag The tag which the logger will shown in logcat
      * @param msgFormat the format the message will be appeared "Hello %s, isn't %s cool?
+     * @param ex the exception which occurred
      * @param args the arguments which you want to use
      */
     public void logError(String tag, String msgFormat, Exception ex, Object...args) {
@@ -78,10 +79,31 @@ public class LoggerWrapper {
     /**
      * Logs with [ERROR][tag] msg exception
      * @param msgFormat the format the message will be appeared "Hello %s, isn't %s cool?
+     * @param ex the exception which occurred
      * @param args the arguments which you want to use
      */
     public void logError(String msgFormat, Exception ex, Object...args) {
         Log.e(_tag, String.format(msgFormat,args), ex);
+    }
+    /**
+     * Logs with [ERROR][tag] msg exception
+     * @param msgFormat the format the message will be appeared "Hello %s, isn't %s cool?
+     * @param t the throwable which occurred
+     * @param args the arguments which you want to use
+     */
+    public void logError(String msgFormat, Throwable t, Object...args) {
+        Log.e(_tag, String.format(msgFormat,args), t);
+    }
+    /**
+     * Logs with [ERROR][tag] msg exception
+     * @param tag The tag which the logger will shown in logcat
+     * @param tag The tag which the logger will shown in logcat
+     * @param msgFormat the format the message will be appeared "Hello %s, isn't %s cool?
+     * @param t the exception which occurred
+     * @param args the arguments which you want to use
+     */
+    public void logError(String tag, String msgFormat, Throwable t, Object...args) {
+        Log.e(tag, String.format(msgFormat,args),t);
     }
 
 

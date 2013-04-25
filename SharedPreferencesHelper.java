@@ -23,6 +23,10 @@ public class SharedPreferencesHelper {
         editor = preferences.edit();
     }
 
+    public static SharedPreferences getPreferences() {
+        return preferences;
+    }
+
     public static boolean getFirstTimeOpenApp()
     {
         boolean firstTime = preferences.getBoolean("firstTime", true);
